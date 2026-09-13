@@ -1,3 +1,4 @@
+<img width="2104" height="2560" alt="overview" src="https://github.com/user-attachments/assets/5424426f-5aab-40ce-8ffe-79d052262799" />
 # Morty Steam Auth
 
 Windows-приложение на Rust для Steam Guard, зашифрованного хранения `maFile` и мобильных подтверждений.
