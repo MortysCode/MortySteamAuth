@@ -1,0 +1,41 @@
+[package]
+name = "morty-steam-auth"
+version = "0.1.0"
+edition = "2024"
+description = "Morty Steam Auth — local Steam Guard authenticator"
+license = "MIT"
+
+[dependencies]
+aes-gcm = "0.10"
+argon2 = "0.5"
+base64 = "0.22"
+directories = "6"
+eframe = "0.32"
+egui_extras = { version = "0.32", features = ["http", "image"] }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp"] }
+getrandom = "0.3"
+hmac = "0.12"
+rfd = "0.15"
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json", "cookies", "gzip", "rustls-tls"] }
+regex = "1"
+scraper = "0.24"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha1 = "0.10"
+steamguard = "0.18.4"
+tray-icon = "0.24.2"
+walkdir = "2"
+zeroize = "1"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_UI_Input_KeyboardAndMouse", "Win32_UI_WindowsAndMessaging"] }
+
+[build-dependencies]
+ico = "0.4"
+image = { version = "0.25", default-features = false, features = ["png"] }
+winresource = "0.1"
+
+[profile.release]
+lto = "thin"
+opt-level = "s"
+strip = true
